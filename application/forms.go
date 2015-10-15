@@ -2,11 +2,15 @@ package application
 
 import (
 	"bytes"
+	"crypto/md5"
+	"fmt"
 	"github.com/mholt/binding"
 	"github.com/thoas/gostorages"
 	"github.com/thoas/picfit/image"
 	"io"
 	"mime/multipart"
+	"path"
+	"path/filepath"
 )
 
 type MultipartForm struct {
@@ -38,14 +42,18 @@ func (f *MultipartForm) Upload(storage gostorages.Storage) (*image.ImageFile, er
 		return nil, err
 	}
 
-	err = storage.Save(f.Data.Filename, gostorages.NewContentFile(dataBytes.Bytes()))
+	dataHash := fmt.Sprintf("%x", md5.Sum(dataBytes.Bytes()))
+	ext := filepath.Ext(f.Data.Filename)
+	filename := path.Join(dataHash[:2], dataHash[2:4], dataHash[4:]+ext)
+
+	err = storage.Save(filename, gostorages.NewContentFile(dataBytes.Bytes()))
 
 	if err != nil {
 		return nil, err
 	}
 
 	return &image.ImageFile{
-		Filepath: f.Data.Filename,
+		Filepath: filename,
 		Storage:  storage,
 	}, nil
 }
