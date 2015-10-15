@@ -61,7 +61,9 @@ var UploadHandler = func(res muxer.Response, req *http.Request, app *Application
 		panic(err)
 	}
 
+	res.Header().Add("Location", file.URL())
 	res.ContentType("application/json")
+	res.ResponseWriter.WriteHeader(http.StatusCreated)
 	res.ResponseWriter.Write(content)
 }
 
