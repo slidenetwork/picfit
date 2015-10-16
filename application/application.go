@@ -175,7 +175,7 @@ func (a *Application) InitRouter() *negroni.Negroni {
 		PrintStack: debug,
 		StackAll:   false,
 		StackSize:  1024 * 8,
-	}, &middleware.Logger{a.Logger})
+	}, &middleware.Logger{Logger: a.Logger})
 	n.Use(cors.New(cors.Options{
 		AllowedOrigins: allowedOrigins,
 		AllowedMethods: allowedMethods,

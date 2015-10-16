@@ -44,7 +44,7 @@ func (rec *Recovery) ServeHTTP(rw http.ResponseWriter, r *http.Request, next htt
 				packet := raven.NewPacket(er.Error(), raven.NewException(er, trace()), raven.NewHttp(r))
 				eventID, _ := rec.Raven.Capture(packet, nil)
 
-				rec.Logger.Printf("Event %d sent to sentry", eventID)
+				rec.Logger.Printf("Event %s sent to sentry", eventID)
 			}
 
 			if rec.PrintStack {
