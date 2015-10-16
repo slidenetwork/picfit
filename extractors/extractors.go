@@ -16,7 +16,7 @@ var Operation Extractor = func(key string, req *muxer.Request) (interface{}, err
 	operation, ok := engines.Operations[req.QueryString[key]]
 
 	if !ok {
-		return nil, fmt.Errorf("Invalid method %s or invalid parameters", operation)
+		operation = engines.Operations["original"]
 	}
 
 	return operation, nil
