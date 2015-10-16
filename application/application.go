@@ -187,7 +187,7 @@ func (a *Application) InitRouter() *negroni.Negroni {
 		PrintStack: debug,
 		StackAll:   false,
 		StackSize:  1024 * 8,
-	}, &middleware.Logger{a.Logger})
+	}, &middleware.Logger{Logger: a.Logger})
 	n.Use(cors.New(cors.Options{
 		AllowedOrigins: allowedOrigins,
 		AllowedMethods: allowedMethods,
@@ -241,7 +241,7 @@ func (a *Application) Store(filepath string, i *image.ImageFile) error {
 
 	// Write children info only when we actually want to be able to delete things.
 	if a.EnableDelete {
-		err = con.SetAdd(filepath + ":children", key)
+		err = con.SetAdd(filepath+":children", key)
 
 		if err != nil {
 			a.Logger.Fatal(err)

@@ -5,7 +5,6 @@ import (
 	"github.com/mitchellh/goamz/aws"
 	"github.com/thoas/gokvstores"
 	"github.com/thoas/gostorages"
-	"github.com/thoas/picfit/http"
 	"strconv"
 )
 
@@ -53,7 +52,7 @@ var HTTPFileSystemStorageParameter StorageParameter = func(params map[string]str
 		return nil, fmt.Errorf("You can't use the http wrapper without setting *base_url* in your config file")
 	}
 
-	return &http.HTTPStorage{storage}, nil
+	return storage, nil
 }
 
 var HTTPS3StorageParameter StorageParameter = func(params map[string]string) (gostorages.Storage, error) {
@@ -67,7 +66,7 @@ var HTTPS3StorageParameter StorageParameter = func(params map[string]string) (go
 		return nil, fmt.Errorf("You can't use the http wrapper without setting *base_url* in your config file")
 	}
 
-	return &http.HTTPStorage{storage}, nil
+	return storage, nil
 }
 
 var S3StorageParameter StorageParameter = func(params map[string]string) (gostorages.Storage, error) {
