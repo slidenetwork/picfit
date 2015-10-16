@@ -408,6 +408,10 @@ func (e *GoImageEngine) Transform(img *imagefile.ImageFile, operation *Operation
 
 			return file, err
 		}
+	case Original:
+		file.Processed = img.Source
+
+		return file, err
 	}
 
 	return nil, fmt.Errorf("Operation not found for %s", operation)
