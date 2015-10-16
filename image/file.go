@@ -25,7 +25,7 @@ func (i *ImageFile) Content() []byte {
 }
 
 func (i *ImageFile) URL() string {
-	return i.Storage.URL(i.Filepath)
+	return i.Storage.URL(path.Join("display", i.Filepath))
 }
 
 func (i *ImageFile) Path() string {
