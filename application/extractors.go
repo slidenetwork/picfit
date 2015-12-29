@@ -2,11 +2,12 @@ package application
 
 import (
 	"fmt"
-	"github.com/thoas/picfit/engines"
-	"github.com/thoas/picfit/image"
 	"mime"
 	"net/url"
 	"path/filepath"
+
+	"github.com/slidenetwork/picfit/engines"
+	"github.com/slidenetwork/picfit/image"
 )
 
 type Extractor func(key string, req *Request) (interface{}, error)

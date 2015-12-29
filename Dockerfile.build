@@ -2,10 +2,10 @@ FROM golang:1.5.2
 
 ENV GO15VENDOREXPERIMENT 1
 
-ADD . /go/src/github.com/thoas/picfit
+ADD . /go/src/github.com/slidenetwork/picfit
 
-WORKDIR /go/src/github.com/thoas/picfit
+WORKDIR /go/src/github.com/slidenetwork/picfit
 
-VOLUME ["/go/src/github.com/thoas/picfit/bin"]
+VOLUME ["/go/src/github.com/slidenetwork/picfit/bin"]
 
 CMD make build-static

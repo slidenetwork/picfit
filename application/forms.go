@@ -4,20 +4,22 @@ import (
 	"bytes"
 	"crypto/md5"
 	"fmt"
-	"github.com/mholt/binding"
-	"github.com/thoas/gostorages"
-	"github.com/thoas/picfit/image"
 	"io"
 	"mime/multipart"
+	"net/http"
 	"path"
 	"path/filepath"
+
+	"github.com/mholt/binding"
+	"github.com/slidenetwork/picfit/image"
+	"github.com/thoas/gostorages"
 )
 
 type MultipartForm struct {
 	Data *multipart.FileHeader `json:"data"`
 }
 
-func (f *MultipartForm) FieldMap() binding.FieldMap {
+func (f *MultipartForm) FieldMap(req *http.Request) binding.FieldMap {
 	return binding.FieldMap{
 		&f.Data: "data",
 	}

@@ -34,4 +34,4 @@ docker-build:
 	@(echo "-> Preparing builder...")
 	@(docker build -t picfit-builder -f Dockerfile.build .)
 	@(mkdir -p $(BIN_DIR))
-	@(docker run --rm -v $(BIN_DIR):/go/src/github.com/thoas/picfit/bin picfit-builder)
+	@(docker run --rm -v $(BIN_DIR):/go/src/github.com/slidenetwork/picfit/bin picfit-builder)

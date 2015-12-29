@@ -1,94 +1,105 @@
 {
-	"ImportPath": "github.com/thoas/picfit",
-	"GoVersion": "go1.5",
+	"ImportPath": "github.com/slidenetwork/picfit",
+	"GoVersion": "go1.5.1",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/Sirupsen/logrus",
-			"Comment": "v0.6.1-10-g6c28e16",
-			"Rev": "6c28e16200e55c2549705ac24ea58976c07f18ac"
+			"Comment": "v0.8.7-53-g446d1c1",
+			"Rev": "446d1c146faa8ed3f4218f056fcd165f6bcfda81"
 		},
 		{
 			"ImportPath": "github.com/codegangsta/cli",
-			"Comment": "1.2.0-26-gf7ebb76",
-			"Rev": "f7ebb761e83e21225d1d8954fde853bf8edd46c4"
+			"Comment": "1.2.0-143-ga65b733",
+			"Rev": "a65b733b303f0055f8d324d805f393cd3e7a7904"
 		},
 		{
 			"ImportPath": "github.com/codegangsta/negroni",
-			"Comment": "v0.1-34-gae96f1c",
-			"Rev": "ae96f1c1ac9eb11be7dff4fe4cb42f6846b93d77"
+			"Comment": "v0.1-70-gc7477ad",
+			"Rev": "c7477ad8e330bef55bf1ebe300cf8aa67c492d1b"
 		},
 		{
 			"ImportPath": "github.com/disintegration/imaging",
-			"Rev": "3ab6ec550f20d497d2755ed3c48a3e45ad6b7eb9"
+			"Rev": "546cb3c5137b3f1232e123a26aa033aade6b3066"
 		},
 		{
 			"ImportPath": "github.com/facebookgo/clock",
-			"Rev": "41df9c4b742349146d28ac5d8caa45161209f3fc"
+			"Rev": "600d898af40aa09a7a93ecb9265d87b0504b6f03"
 		},
 		{
 			"ImportPath": "github.com/facebookgo/grace/gracehttp",
-			"Rev": "1b0609c25d1f0d6aefdd5404eaa710a16daca9d6"
+			"Rev": "053ab5d25436faedf3fe76fbf3da797c8c27c659"
 		},
 		{
 			"ImportPath": "github.com/facebookgo/grace/gracenet",
-			"Rev": "1b0609c25d1f0d6aefdd5404eaa710a16daca9d6"
+			"Rev": "053ab5d25436faedf3fe76fbf3da797c8c27c659"
 		},
 		{
 			"ImportPath": "github.com/facebookgo/httpdown",
-			"Rev": "1c143bb4362a4f297f9cabd74bf0d05ee2b4f5dc"
+			"Rev": "1fa03998d20119dfe4ef73f56a638d83048052e2"
 		},
 		{
 			"ImportPath": "github.com/facebookgo/stats",
-			"Rev": "a8126df93b2406675168d2930b6d3db46ffb805c"
+			"Rev": "1b76add642e42c6ffba7211ad7b3939ce654526e"
 		},
 		{
 			"ImportPath": "github.com/franela/goreq",
-			"Rev": "6d074b8384a4b5359484d95e88e7566020bc4335"
+			"Rev": "42feb3cf4f1800ab356610dd559f8e363ff9b5ac"
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/internal",
-			"Rev": "cca3df8fa0670249a3f746bcc062c69aeba0517c"
+			"Rev": "836b6e58b3358112c8291565d01c35b8764070d7"
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/redis",
-			"Rev": "cca3df8fa0670249a3f746bcc062c69aeba0517c"
+			"Rev": "836b6e58b3358112c8291565d01c35b8764070d7"
 		},
 		{
 			"ImportPath": "github.com/getsentry/raven-go",
-			"Rev": "3fd636ed242c26c0f55bc9ee1fe47e1d6d2d77f7"
+			"Rev": "3966f3ab8333308d76b6cc83a29776a266bbdd92"
 		},
 		{
 			"ImportPath": "github.com/gorilla/context",
-			"Rev": "14f550f51af52180c2eefed15e5fd18d63c0a64a"
+			"Rev": "215affda49addc4c8ef7e2534915df2c8c35c6cd"
 		},
 		{
 			"ImportPath": "github.com/gorilla/mux",
-			"Rev": "e444e69cbd2e2e3e0749a2f3c717cec491552bbf"
+			"Rev": "2aad27d3101b8183f8fa1bebdbc2cdb74fcef090"
 		},
 		{
 			"ImportPath": "github.com/imdario/mergo",
-			"Comment": "0.1.3-9-g6ce7536",
-			"Rev": "6ce7536fed6623eff47b95768f858a0f8d1ac57b"
+			"Comment": "0.2.0-8-gbb554f9",
+			"Rev": "bb554f9fd6ee4cd190eef868de608ced813aeda1"
 		},
 		{
 			"ImportPath": "github.com/jmoiron/jsonq",
-			"Rev": "7c27c8eb9f6831555a4209f6a7d579159e766a3c"
+			"Rev": "e874b168d07ecc7808bc950a17998a8aa3141d82"
 		},
 		{
 			"ImportPath": "github.com/meatballhat/negroni-logrus",
-			"Rev": "d5e114d7a445f7a3652cf807d3f83d5dceb8de26"
+			"Rev": "eed9b3e979c39c3cd0a639b6c3a58d604f262b96"
+		},
+		{
+			"ImportPath": "github.com/mholt/binding",
+			"Rev": "89411c4ffb61f0ebef45d8bdb830103b358ef9fa"
 		},
 		{
 			"ImportPath": "github.com/mitchellh/goamz/aws",
-			"Rev": "e99a7300be9605de0c4b6366988e1df883fabfe3"
+			"Rev": "caaaea8b30ee15616494ee68abd5d8ebbbef05cf"
 		},
 		{
 			"ImportPath": "github.com/mitchellh/goamz/s3",
-			"Rev": "e99a7300be9605de0c4b6366988e1df883fabfe3"
+			"Rev": "caaaea8b30ee15616494ee68abd5d8ebbbef05cf"
 		},
 		{
 			"ImportPath": "github.com/rs/cors",
-			"Rev": "5e4ce6bc0ecd3472f6f943666d84876691be2ced"
+			"Rev": "ceb1fbf238d7711a11a86a2622d0b85305348aeb"
+		},
+		{
+			"ImportPath": "github.com/rs/xhandler",
+			"Rev": "d9d9599b6aaf6a058cb7b1f48291ded2cbd13390"
 		},
 		{
 			"ImportPath": "github.com/thoas/gokvstores",
@@ -96,23 +107,27 @@
 		},
 		{
 			"ImportPath": "github.com/thoas/gostorages",
-			"Rev": "a193818eb9acc5104bf1d73319da30b3c21e9a04"
+			"Rev": "f22ddc5bed808ecafe29fc67f90d74402f2924a6"
+		},
+		{
+			"ImportPath": "github.com/thoas/stats",
+			"Rev": "54ed61c2b47e263ae2f01b86837b0c4bd1da28e8"
 		},
 		{
 			"ImportPath": "github.com/vaughan0/go-ini",
 			"Rev": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1"
 		},
 		{
-			"ImportPath": "github.com/stretchr/testify",
-			"Rev": "e4ec8152c15fc46bd5056ce65997a07c7d415325"
+			"ImportPath": "golang.org/x/image/bmp",
+			"Rev": "baddd3465a05d84a6d8d3507547a91cb188c81ea"
 		},
 		{
-			"ImportPath": "github.com/thoas/stats",
-			"Rev": "6e037cd1c2e122afc99d4f9cb47c2c8d158ccdbd"
+			"ImportPath": "golang.org/x/image/tiff",
+			"Rev": "baddd3465a05d84a6d8d3507547a91cb188c81ea"
 		},
 		{
-			"ImportPath": "github.com/mholt/binding",
-			"Rev": "6c082304f300fc70793cb0be18af0fdd4acd2b75"
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "0cb26f788dd4625d1956c6fd97ffc4c90669d129"
 		}
 	]
 }

@@ -2,12 +2,13 @@ package application
 
 import (
 	"fmt"
+
 	"github.com/getsentry/raven-go"
 	"github.com/jmoiron/jsonq"
+	"github.com/slidenetwork/picfit/dummy"
+	"github.com/slidenetwork/picfit/engines"
+	"github.com/slidenetwork/picfit/util"
 	"github.com/thoas/gostorages"
-	"github.com/thoas/picfit/dummy"
-	"github.com/thoas/picfit/engines"
-	"github.com/thoas/picfit/util"
 )
 
 type Initializer func(jq *jsonq.JsonQuery, app *Application) error

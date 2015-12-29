@@ -3,6 +3,10 @@ package application
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"strings"
+
 	"github.com/Sirupsen/logrus"
 	"github.com/codegangsta/negroni"
 	"github.com/getsentry/raven-go"
@@ -10,16 +14,13 @@ import (
 	"github.com/jmoiron/jsonq"
 	"github.com/meatballhat/negroni-logrus"
 	"github.com/rs/cors"
+	"github.com/slidenetwork/picfit/engines"
+	"github.com/slidenetwork/picfit/hash"
+	"github.com/slidenetwork/picfit/image"
+	"github.com/slidenetwork/picfit/middleware"
 	"github.com/thoas/gokvstores"
 	"github.com/thoas/gostorages"
-	"github.com/thoas/picfit/engines"
-	"github.com/thoas/picfit/hash"
-	"github.com/thoas/picfit/image"
-	"github.com/thoas/picfit/middleware"
 	"github.com/thoas/stats"
-	"io/ioutil"
-	"net/http"
-	"strings"
 )
 
 type Shard struct {
@@ -129,13 +130,13 @@ func (a *Application) InitRouter() *negroni.Negroni {
 		handlerFunc := a.ServeHTTP(handler)
 
 		router.Handle(fmt.Sprintf("/%s", name), handlerFunc)
-		router.Handle(fmt.Sprintf("/%s/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{sig}/{op}/x{h:[\\d]+}/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{sig}/{op}/{w:[\\d]+}x/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{sig}/{op}/{w:[\\d]+}x{h:[\\d]+}/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{op}/x{h:[\\d]+}/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{op}/{w:[\\d]+}x/{path:[\\w\\-/.]+}", name), handlerFunc)
 		router.Handle(fmt.Sprintf("/%s/{op}/{w:[\\d]+}x{h:[\\d]+}/{path:[\\w\\-/.]+}", name), handlerFunc)
+		router.Handle(fmt.Sprintf("/%s/{path:[\\w\\-/.]+}", name), handlerFunc)
 	}
 
 	router.Handle("/upload", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {

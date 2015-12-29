@@ -1,14 +1,15 @@
 package application
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/thoas/gokvstores"
-	"github.com/thoas/picfit/engines"
-	"github.com/thoas/picfit/hash"
-	"github.com/thoas/picfit/signature"
-	"github.com/thoas/picfit/util"
 	"net/http"
 	"net/url"
+
+	"github.com/gorilla/mux"
+	"github.com/slidenetwork/picfit/engines"
+	"github.com/slidenetwork/picfit/hash"
+	"github.com/slidenetwork/picfit/signature"
+	"github.com/slidenetwork/picfit/util"
+	"github.com/thoas/gokvstores"
 )
 
 type Request struct {

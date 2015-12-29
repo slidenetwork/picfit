@@ -1,10 +1,11 @@
 package image
 
 import (
-	"github.com/thoas/gostorages"
-	"github.com/thoas/picfit/http"
 	"io/ioutil"
 	"net/url"
+
+	"github.com/slidenetwork/picfit/http"
+	"github.com/thoas/gostorages"
 )
 
 func FromURL(u *url.URL) (*ImageFile, error) {
