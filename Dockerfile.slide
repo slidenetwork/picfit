@@ -1,0 +1,12 @@
+FROM golang:1.5.2
+
+ENV GO15VENDOREXPERIMENT 1
+
+ADD . /go/src/github.com/slidenetwork/picfit
+
+WORKDIR /go/src/github.com/slidenetwork/picfit
+
+RUN go build -o ./picfit
+RUN mkdir -p /var/slide/media
+
+CMD ["./picfit"]
