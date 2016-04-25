@@ -2,12 +2,9 @@ package application
 
 import (
 	"fmt"
-	"mime"
 	"net/url"
-	"path/filepath"
 
 	"github.com/slidenetwork/picfit/engines"
-	"github.com/slidenetwork/picfit/image"
 )
 
 type Extractor func(key string, req *Request) (interface{}, error)
@@ -35,13 +32,13 @@ var URL Extractor = func(key string, req *Request) (interface{}, error) {
 		return nil, fmt.Errorf("URL %s is not valid", value)
 	}
 
-	mimetype := mime.TypeByExtension(filepath.Ext(value))
+	// mimetype := mime.TypeByExtension(filepath.Ext(value))
 
-	_, ok = image.Extensions[mimetype]
+	// _, ok = image.Extensions[mimetype]
 
-	if !ok {
-		return nil, fmt.Errorf("Mimetype %s is not supported", mimetype)
-	}
+	// if !ok {
+	// 	return nil, fmt.Errorf("Mimetype %s is not supported", mimetype)
+	// }
 
 	return url, nil
 }
